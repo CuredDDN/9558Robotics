@@ -1,0 +1,46 @@
+package robotics1;
+import java.util.Scanner;
+
+class printRectangle {
+	static void PrintRectangle(int w, int l) {
+		int i, j;
+		
+		for (i = 1; i <= w; i++) {
+			for (j = 1; j <= l; j++) {
+		if ((i == 1 || i == w) && (j == 1 || j == l)) {
+			System.out.print("*");
+		} else if (i == 1 || i == w) {
+			System.out.print("-3");
+		} else if (j == 1 || j == l ) {
+			System.out.print("|");
+		} else {
+			System.out.print(" ");
+		}
+			}
+			System.out.println();
+		}
+	}
+	
+	static void addSpace(int k) {
+		int s = 4;
+		for (s = 1; s <=k; s++) {
+			System.out.println(" ");
+		}
+	}
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Input number for width");
+		int width = input.nextInt();
+		System.out.println("Input number for length");
+		int length = input.nextInt();
+		int perimeter = (2*width) + (2*length);
+		addSpace(2);
+		System.out.println("Here's your rectangle");
+		addSpace(1);
+		PrintRectangle(width, length);
+		input.close();
+		addSpace(2);
+		System.out.println("Area is: " + width * length);
+		System.out.println("Perimeter is: " + perimeter);
+	}
+}
